@@ -1,5 +1,5 @@
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-between row ">
+  <div class="component flex-grow-1 d-flex flex-column align-items-center justify-content-between row">
     <div class="col-md-12">
       <div class="row pt-3">
         <div class="col-md-6  pb-4">
@@ -10,7 +10,7 @@
             Report Bug
           </button>
         </div>
-        <TableTop />
+        <BackStrip />
       </div>
     </div>
   </div>
@@ -18,11 +18,15 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'PaymentProcess',
+  setup() {
+    return {}
+  },
+  components: {}
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .home{
   text-align: center;
   user-select: none;

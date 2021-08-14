@@ -1,38 +1,28 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img
-          alt="logo"
-          src="../assets/img/bug-outline.png"
-          height="45"
-        />
-      </div>
-    </router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon" />
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
-            Home
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link :to="{ name: 'About' }" class="nav-link">
-            About
-          </router-link>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient row">
+    <div class="col-md-6">
+      <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+        <div class="d-flex flex-column align-items-center ">
+          <img
+            alt="logo"
+            src="../assets/img/bug-outline.png"
+            height="45"
+          />
+        </div>
+      </router-link>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon" />
+      </button>
+    </div>
+    <div class="collapse navbar-collapse col-md-6 d-flex justify-content-end" id="navbarText">
       <span class="navbar-text">
         <button
           class="btn btn-outline-primary text-uppercase"
@@ -42,7 +32,7 @@
           Login
         </button>
 
-        <div class="dropdown" v-else>
+        <div class="dropdown " v-else>
           <div
             class="dropdown-toggle"
             @click="state.dropOpen = !state.dropOpen"
@@ -122,5 +112,10 @@ a:hover {
 }
 .nav-item .nav-link.router-link-exact-active{
   color: var(--primary);
+}
+.bg-gradient{
+background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>
