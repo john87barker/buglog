@@ -1,17 +1,13 @@
 <template>
   <div class="component flex-grow-1 d-flex flex-column align-items-center justify-content-between row">
     <div class="col-md-12">
-      <div class="row pt-3">
-        <div class="col-md-6  pb-4">
-          <h2>Bugs</h2>
+      <div class="row pt-3 ">
+        <div class="col-md-4 offset-1 d-flex bg-dark-grey ">
+          <h3>Payment Processing</h3>
+          <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="">
         </div>
-        <div class="col-md-6 pb-4 ">
-          <button type="button" class="btn btn-outline-primary report btn-gradient">
-            Report Bug
-          </button>
-        </div>
-        <BackStrip />
       </div>
+      <BackStrip />
     </div>
   </div>
 </template>
