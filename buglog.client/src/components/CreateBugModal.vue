@@ -30,12 +30,11 @@
         </div>
 
         <div class="modal-footer">
-          <!-- TODO add @click here -->
           <button type="submit"
                   @click="createBug"
                   class="btn btn-secondary"
                   data-toggle="modal"
-                  data-target="#createNote"
+                  data-target="#createBugReport"
           >
             Save Report
           </button>

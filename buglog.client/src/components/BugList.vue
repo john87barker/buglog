@@ -1,21 +1,21 @@
 <template>
   <div class="component col-md-10 offset-1 bg-dark-grey px-5 list pt-3 ">
-    <router-link :to="{ name: 'BugDetails', params: {id: id}}" @click.stop="">
-      <div class="row py-3 bg-primary shadow mb-2" v-for="b in bugs" :key="b.id" :bug="b">
-        <div class="col-md-3 text-left">
+    <div class="row py-3 bg-primary shadow mb-2" v-for="b in bugs" :key="b.id" :bug="b">
+      <div class="col-md-3 text-left text-light">
+        <router-link :to="{ name: 'BugDetails', params: {id: b.id}}" @click="getBugById" class="text-light">
           {{ b.title }}
-        </div>
-        <div class="col-md-3">
-          {{ b.creator.name }}
-        </div>
-        <div class="col-md-3 text-right pr-3">
-          {{ new Date(b.createdAt).toLocaleDateString() }}
-        </div>
-        <div class="col-md-3 text-right pr-5">
-          Is Closed: {{ b.closed }}
-        </div>
+        </router-link>
       </div>
-    </router-link>
+      <div class="col-md-3">
+        {{ b.creator.name }}
+      </div>
+      <div class="col-md-3 text-right pr-3">
+        {{ new Date(b.createdAt).toLocaleDateString() }}
+      </div>
+      <div class="col-md-3 text-right pr-5">
+        Is Closed: {{ b.closed }}
+      </div>
+    </div>
   </div>
 </template>
 
