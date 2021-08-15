@@ -3,8 +3,8 @@
     <div class="col-md-12">
       <div class="row pt-3 ">
         <div class="col-md-4 offset-1 d-flex bg-dark-grey justify-content-between ">
-          <h3 class="pt-1">
-            BUG TITLE
+          <h3 class="pt-1" v-for="b in bugs" :key="b.id">
+            {{ b.title }}
           </h3>
           <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="image">
         </div>
@@ -17,6 +17,12 @@
 <script>
 export default {
   name: 'PaymentProcess',
+  props: {
+    bug: {
+      type: Object,
+      required: true
+    }
+  },
   setup() {
     return {}
   },

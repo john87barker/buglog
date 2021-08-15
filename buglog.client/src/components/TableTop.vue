@@ -11,6 +11,7 @@
         Last Update
       </h4>
       <h4 class="col-md-3 text-left">
+        <!-- TODO make it a v-if something to the effect of if bug.status === true / then make strikethrough -ish -->
         Status
       </h4>
     </div>

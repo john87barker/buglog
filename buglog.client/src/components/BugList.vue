@@ -1,43 +1,38 @@
 <template>
   <div class="component col-md-10 offset-1 bg-dark-grey px-5 list pt-3 ">
     <!-- Hard Coded lists row 1 -->
-    <div class="row py-3 bg-primary shadow mb-2">
+    <div class="row py-3 bg-primary shadow mb-2" v-for="b in bugs" :key="b.id" :bug="b">
       <div class="col-md-3 text-left">
-        Payment Process
+        {{ b.title }}
       </div>
       <div class="col-md-3">
-        someone@codeworks.com
+        {{ b.creator.name }}
       </div>
       <div class="col-md-3 text-right pr-3">
-        June 12, 2020
+        {{ new Date(b.createdAt).toLocaleDateString() }}
       </div>
       <div class="col-md-3 text-right pr-5">
-        Status: Open
-      </div>
-    </div>
-    <!-- Hard Coded lists row 2 -->
-    <div class="row py-3 bg-primary shadow">
-      <div class="col-md-3 text-left">
-        Payment Process
-      </div>
-      <div class="col-md-3">
-        someone@codeworks.com
-      </div>
-      <div class="col-md-3 text-right pr-3">
-        July 3, 2000
-      </div>
-      <div class="col-md-3 text-right pr-5">
-        Status: closed
+        {{ b.closed }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core'
+import { AppState } from '../AppState'
 export default {
   name: 'Component',
+  props: {
+    bug: {
+      type: Object,
+      required: true
+    }
+  },
   setup() {
-    return {}
+    return {
+      bugs: computed(() => AppState.bugs)
+    }
   },
   components: {}
 }

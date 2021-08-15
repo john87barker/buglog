@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/paymentprocess',
     name: 'PaymentProcess',
-    component: loadPage('PaymentProcessPage')
+    component: loadPage('PaymentProcessPage'),
+    beforeEnter: authGuard
   },
   {
     path: '/account',

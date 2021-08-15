@@ -11,42 +11,33 @@
             X
           </button>
         </div>
-        <!-- add v-model in here -->
         <div class="modal-body modal-body-scrollable">
+          <input
+            class="form-control my-2"
+            type="text"
+            v-model="state.newBug.title"
+            id="bugTitle"
+            placeholder="Problem title..."
+          >
           <textarea
-            class="form-control"
-
-            id="note"
-            rows="3"
-            placeholder="Note..."
+            class="form-control my-2"
+            v-model="state.newBug.description"
+            id="bugDescription"
+            rows="6"
+            placeholder="Describe the problem..."
           >
           </textarea>
         </div>
-        <!-- vfor in next line -->
-        <div>
-          <div class="m-4 p-3 border rounded col-md-11 bg-primary">
-            <div class="row ">
-              <div class="col-md-10 ">
-                Note Body goes here
-              </div>
-              <!-- TODO add delete button back on when ready -->
-              <!-- <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary" title="delete" @click="destroyNote(n.id)">
-                  X
-                </button>
-              </div> -->
-            </div>
-          </div>
-        </div>
+
         <div class="modal-footer">
           <!-- TODO add @click here -->
           <button type="submit"
-
+                  @click="createBug"
                   class="btn btn-secondary"
                   data-toggle="modal"
                   data-target="#createNote"
           >
-            Save Bug Report
+            Save Report
           </button>
         </div>
       </div>
@@ -55,10 +46,43 @@
 </template>
 
 <script>
+import { reactive } from '@vue/reactivity'
+import { bugsService } from '../services/BugsService'
+import Pop from '../utils/Notifier'
+import { computed } from '@vue/runtime-core'
+import { AppState } from '../AppState'
+import { useRouter } from 'vue-router'
+
 export default {
-  name: 'Component',
+  name: 'CreateBugModal',
+  props: {
+    bugs: {
+      type: Array,
+      required: true
+    }
+  },
   setup() {
-    return {}
+    const router = useRouter()
+    const state = reactive({
+      newBug: {}
+    })
+    return {
+      state,
+      account: computed(() => AppState.account),
+      async createBug() {
+        try {
+          // debugger
+          const newBug = await bugsService.createBug(state.newBug)
+          state.newBug = {}
+          Pop.toast('Bug has been reported', 'success')
+          // debugger
+          router.push({ name: 'PaymentProcessPage', params: { id: newBug.id } })
+        } catch (error) {
+          Pop.toast(error, 'error')
+          console.log(error)
+        }
+      }
+    }
   },
   components: {}
 }

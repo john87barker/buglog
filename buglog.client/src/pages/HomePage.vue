@@ -9,7 +9,7 @@
           <button type="button" data-target="#createBugReport" data-toggle="modal" class="mx-2 my-1 btn btn-gradient report">
             Report Bug
           </button>
-          <CreateBugModal />
+          <CreateBugModal :bug="b" />
         </div>
         <TableTop />
       </div>
@@ -18,8 +18,43 @@
 </template>
 
 <script>
+import { reactive } from '@vue/reactivity'
+import { computed, onMounted } from '@vue/runtime-core'
+import { bugsService } from '../services/BugsService'
+import Pop from '../utils/Notifier'
+import { AppState } from '../AppState'
+import TableTop from '../components/TableTop.vue'
+import CreateBugModal from '../components/CreateBugModal.vue'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  props: {
+    bugs: {
+      type: Array,
+      required: true
+    }
+  },
+  setup() {
+    const state = reactive()
+
+    onMounted(async() => {
+      try {
+        await bugsService.getAllBugs()
+        console.log('mounted get all')
+      } catch (error) {
+        Pop.toast(error, 'error')
+      }
+    })
+    return {
+      state,
+      account: computed(() => AppState.account),
+
+      components: {
+        TableTop, CreateBugModal
+      }
+
+    }
+  }
 }
 </script>
 

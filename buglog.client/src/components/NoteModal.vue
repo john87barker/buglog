@@ -12,18 +12,24 @@
         </div>
         <!-- add v-model in here -->
         <div class="modal-body modal-body-scrollable">
+          <input
+            class="form-control"
+            type="text"
+
+            id="noteTitle"
+            placeholder="Bug name..."
+          >
           <textarea
             class="form-control"
-
-            id="note"
+            id="noteDescription"
             rows="3"
-            placeholder="Note..."
+            placeholder="Describe the bug..."
           >
           </textarea>
         </div>
         <!-- vfor in next line -->
         <div>
-          <div class="m-4 p-3 border rounded col-md-11 bg-primary">
+          <div class="m-4 p-3 rounded col-md-11 bg-primary">
             <div class="row ">
               <div class="col-md-10 ">
                 Note Body goes here
