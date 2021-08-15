@@ -3,8 +3,8 @@
     <div class="col-md-12">
       <div class="row pt-3 ">
         <div class="col-md-4 offset-1 d-flex bg-dark-grey justify-content-between ">
-          <h3 class="pt-1" v-for="b in bugs" :key="b.id">
-            {{ b.title }}
+          <h3 class="pt-1">
+            {{ activeBug.title }}
           </h3>
           <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="image">
         </div>
@@ -15,16 +15,35 @@
 </template>
 
 <script>
+import { computed, onMounted } from '@vue/runtime-core'
+import { AppState } from '../AppState'
+import { useRoute, useRouter } from 'vue-router'
+import Pop from '../utils/Notifier'
+// import Swal from 'sweetalert2/dist/sweetalert2.all'
+import { bugsService } from '../services/BugsService'
 export default {
-  name: 'PaymentProcess',
+  name: 'BugDetails',
   props: {
-    bug: {
-      type: Object,
-      required: true
-    }
+    // bug: {
+    //   type: Object,
+    //   required: true
+    // }
   },
   setup() {
-    return {}
+    const route = useRoute()
+    onMounted(async() => {
+      try {
+        // debugger
+        await bugsService.getBugById(route.params.id)
+      } catch (error) {
+        Pop.toast('Could not retrieve the bug', 'error')
+        console.log(error)
+      }
+    })
+    return {
+      bugs: computed(() => AppState.bugs),
+      activeBug: computed(() => AppState.activeBug)
+    }
   },
   components: {}
 }

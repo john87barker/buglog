@@ -76,10 +76,10 @@ export default {
           state.newBug = {}
           Pop.toast('Bug has been reported', 'success')
           // debugger
-          router.push({ name: 'PaymentProcessPage', params: { id: newBug.id } })
+          console.log(newBug.id)
+          router.push({ name: 'BugDetails', params: { id: newBug.id } })
         } catch (error) {
           Pop.toast(error, 'error')
-          console.log(error)
         }
       }
     }
