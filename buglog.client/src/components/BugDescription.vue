@@ -19,8 +19,8 @@
         <br>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vel error explicabo ratione deserunt necessitatibus at, id quibusdam, repellat sunt iure pariatur quam laudantium soluta suscipit molestiae adipisci eligendi consequatur.
         <hr>
-        Sequi repudiandae voluptas, vitae vel possimus ratione unde enim excepturi, odio laborum a laudantium dignissimos nihil nulla consequuntur omnis placeat eos impedit! Vitae excepturi sequi soluta possimus ex iusto aspernatur!
-        Sapiente quae reiciendis ex nostrum sed repudiandae laboriosam dolorum vitae doloribus, fugiat dignissimos suscipit aut eligendi assumenda ducimus vero beatae voluptate soluta placeat repellendus porro. Explicabo possimus nemo illo animi.
+        Sequi repudiandae voluptas, vitae vel possimus ratione unde enim excepturi, odio laborum a laudantium dignissimos nihil nulla consequuntur omnis placeat eos impedit!
+        Sapiente quae reiciendis ex nostrum sed repudiandae laboriosam dolorum vitae doloribus, fugiat dignissimos suscipit aut eligendi assumenda ducimus vero beatae voluptate soluta placeat repellendus porro.
       </div>
     </div>
   </div>
