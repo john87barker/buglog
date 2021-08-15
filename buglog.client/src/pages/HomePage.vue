@@ -6,9 +6,10 @@
           <h2>Bugs</h2>
         </div>
         <div class="col-md-6 pb-4 ">
-          <button type="button" class="btn btn-outline-primary report btn-gradient">
+          <button type="button" data-target="#createBugReport" data-toggle="modal" class="mx-2 my-1 btn btn-gradient report">
             Report Bug
           </button>
+          <CreateBugModal />
         </div>
         <TableTop />
       </div>

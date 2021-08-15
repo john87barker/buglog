@@ -1,10 +1,11 @@
+
 <template>
-  <div class="modal fade" id="createNote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="createBugReport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
       <div class="modal-content bg-dark-grey">
         <div class="modal-header bg-primary ">
           <h5 class="modal-title bg-primary" id="exampleModalLabel">
-            Create a Note
+            Report a Bug
           </h5>
           <button type="button" class="btn-close btn btn-outline-secondary" data-dismiss="modal" aria-label="Close" title="close">
             X
@@ -45,7 +46,7 @@
                   data-toggle="modal"
                   data-target="#createNote"
           >
-            Save Note
+            Save Bug Report
           </button>
         </div>
       </div>
@@ -63,6 +64,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+  <style lang="scss" scoped>
+  </style>
