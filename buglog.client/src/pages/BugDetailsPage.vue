@@ -3,10 +3,12 @@
     <div class="col-md-12">
       <div class="row pt-3 ">
         <div class="col-md-4 offset-1 d-flex bg-dark-grey justify-content-between ">
-          <h3 class="pt-1">
+          <h3 class="pt-2">
             {{ activeBug.title }}
           </h3>
-          <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="image" @click="editBug">
+          <button class="btn btn-outline-dark-grey">
+            <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug" @click="editBug">
+          </button>
         </div>
       </div>
       <BugDescription />
@@ -21,6 +23,7 @@ import { useRoute, useRouter } from 'vue-router'
 import Pop from '../utils/Notifier'
 // import Swal from 'sweetalert2/dist/sweetalert2.all'
 import { bugsService } from '../services/BugsService'
+import { notesService } from '../services/NotesService'
 export default {
   name: 'BugDetails',
   props: {
@@ -35,6 +38,7 @@ export default {
       try {
         // debugger
         await bugsService.getBugById(route.params.id)
+        await notesService.getNotesByBugId(route.params.id)
       } catch (error) {
         Pop.toast('Could not retrieve the bug', 'error')
         console.log(error)
@@ -43,6 +47,7 @@ export default {
     return {
       bugs: computed(() => AppState.bugs),
       activeBug: computed(() => AppState.activeBug)
+      // Create edit bug details.
     }
   },
   components: {}

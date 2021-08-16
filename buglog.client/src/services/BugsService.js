@@ -13,6 +13,12 @@ class BugsService {
     AppState.activeBug = res.data
   }
 
+  async getNotesByBugId(id) {
+    const res = await api.get(`api/bugs/${id}/notes`)
+    logger.log(res.data)
+    AppState.notes = res.data
+  }
+
   async createBug(newBug) {
     try {
       // debugger
@@ -24,6 +30,16 @@ class BugsService {
     } catch (error) {
       logger.log(error)
     }
+  }
+
+  async editBug() {
+    await api.put('api/bugs/:id')
+    // add more obviously
+  }
+
+  async destoryBug() {
+    await api.delete('api/bugs/:id')
+    // don't delete just change it up...need help here
   }
 }
 
