@@ -13,7 +13,7 @@
         <!-- add v-model in here -->
         <div class="modal-body modal-body-scrollable">
           <input
-            class="form-control"
+            class="form-control mb-2"
             type="text"
 
             id="noteTitle"
@@ -28,21 +28,7 @@
           </textarea>
         </div>
         <!-- vfor in next line -->
-        <div>
-          <div class="m-4 p-3 rounded col-md-11 bg-primary">
-            <div class="row ">
-              <div class="col-md-10 ">
-                Note Body goes here
-              </div>
-              <!-- TODO add delete button back on when ready -->
-              <!-- <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary" title="delete" @click="destroyNote(n.id)">
-                  X
-                </button>
-              </div> -->
-            </div>
-          </div>
-        </div>
+
         <div class="modal-footer">
           <!-- TODO add @click here -->
           <button type="submit"

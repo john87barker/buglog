@@ -9,7 +9,6 @@
       </div>
     </div>
     <div class="row">
-      <!-- spill for the bugList -->
       <BugDescription />
     </div>
   </div>

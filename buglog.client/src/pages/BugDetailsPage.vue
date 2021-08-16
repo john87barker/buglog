@@ -6,10 +6,10 @@
           <h3 class="pt-1">
             {{ activeBug.title }}
           </h3>
-          <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="image">
+          <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="image" @click="editBug">
         </div>
       </div>
-      <BackStrip />
+      <BugDescription />
     </div>
   </div>
 </template>
