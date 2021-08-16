@@ -6,9 +6,10 @@
           <h3 class="pt-2">
             {{ activeBug.title }}
           </h3>
-          <button class="btn btn-outline-dark-grey">
-            <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug" @click="editBug">
+          <button class="btn btn-outline-dark-grey" data-target="#editBugReport" data-toggle="modal">
+            <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug">
           </button>
+          <EditBug :bug="activeBug" />
         </div>
       </div>
       <BugDescription />

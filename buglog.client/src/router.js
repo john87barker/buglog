@@ -12,7 +12,7 @@ const routes = [
     component: loadPage('HomePage')
   },
   {
-    path: '/bugdetails',
+    path: '/bugdetails/:id',
     name: 'BugDetails',
     component: loadPage('BugDetailsPage'),
     beforeEnter: authGuard

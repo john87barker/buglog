@@ -34,9 +34,12 @@ class BugsService {
     }
   }
 
-  async editBug() {
-    await api.put('api/bugs/:id')
-    // add more obviously
+  async editBug(id, editedBug) {
+    // debugger
+    const res = await api.put('api/bugs/' + id, editedBug)
+    // console.log(res.data)
+    AppState.bugs = res.data
+    return res.data
   }
 
   async destoryBug() {

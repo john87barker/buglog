@@ -1,20 +1,7 @@
 <template>
   <div class="component col-md-10 offset-1 bg-dark-grey px-5 list pt-3 ">
-    <div class="row py-3 bg-primary shadow mb-2 bug text-light" v-for="b in bugs" :key="b.id" :bug="b">
-      <div class="col-md-3 text-left text-light ">
-        <router-link :to="{ name: 'BugDetails', params: {id: b.id}}" @click="getBugById" class="text-light">
-          {{ b.title }}
-        </router-link>
-      </div>
-      <div class="col-md-3">
-        {{ b.creator.name }}
-      </div>
-      <div class="col-md-3 text-right pr-3">
-        {{ new Date(b.createdAt).toLocaleDateString() }}
-      </div>
-      <div class="col-md-3 text-right pr-5">
-        Is Closed: {{ b.closed }}
-      </div>
+    <div class="row py-3 bg-primary shadow mb-2 bug text-light" v-for="b in bugs" :key="b.id">
+      <Bug :bug="b" />
     </div>
   </div>
 </template>
@@ -24,12 +11,7 @@ import { computed } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 export default {
   name: 'Component',
-  props: {
-    bug: {
-      type: Object,
-      required: true
-    }
-  },
+
   setup() {
     return {
       bugs: computed(() => AppState.bugs)
@@ -48,4 +30,13 @@ export default {
   transform: scale(1.02);
   cursor: pointer;
 }
+.red{
+  color: red;
+  text-shadow: 1px 1px  black;
+}
+.green{
+  color: green;
+  text-shadow: 1px 1px  black;
+}
+
 </style>

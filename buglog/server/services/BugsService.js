@@ -1,8 +1,8 @@
 import { dbContext } from '../db/DbContext'
 import { BadRequest, Forbidden } from '../utils/Errors'
 class BugsService {
-  async destroy(id, userId) {
-    const bug = await dbContext.Bugs.findOneAndUpdate({ _id: id, creatorId: userId }, { Closed: true })
+  async destroy(id, userId, body) {
+    const bug = await dbContext.Bugs.findOneAndUpdate({ _id: id, body, creatorId: userId }, { Closed: true })
     if (!bug) {
       throw new BadRequest('invalid id')
     }

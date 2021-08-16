@@ -28,8 +28,19 @@
             </div>
           </div>
           <div class="col-md-4 pt-3">
-            Bug fixed?
-            {{ activeBug.closed }}
+            <div class="col-md-3 text-right pr-5">
+              Status:
+              <div v-if="activeBug.closed ==true" class="red">
+                <h5>
+                  Closed
+                </h5>
+              </div>
+              <div v-else class="green">
+                <h5>
+                  Open
+                </h5>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -84,5 +95,13 @@ export default {
 }
 .top{
   height: 10rem;
+}
+.red{
+  color: red;
+  text-shadow: 1px 1px  black;
+}
+.green{
+  color: green;
+  text-shadow: 1px 1px 1px black;
 }
 </style>
