@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="BugNotes col-md-12  bg-primary px-5 list py-3 shadow mt-3" v-for="note in notes" :key="note.id">
+    <div class="BugNotes col-md-12  bg-primary px-5 list py-3 shadow mt-3 rounded" v-for="note in notes" :key="note.id">
       <div class="m-2">
         <div class="row">
-          <div class="col-md-4 border border-secondary d-flex pb-2">
+          <div class="col-md-4 border border-secondary d-flex pb-2 rounded">
             <div>
               <img :src="note.creator.picture" alt="" class="pic mr-3">
             </div>
@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 bg-dark-grey py-2">
+          <div class="col-md-12 bg-dark-grey py-2 rounded">
             {{ note.body }}
           </div>
         </div>
