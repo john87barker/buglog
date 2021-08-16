@@ -1,7 +1,7 @@
 <template>
   <div class="component col-md-10 offset-1 bg-dark-grey px-5 list pt-3 ">
-    <div class="row py-3 bg-primary shadow mb-2" v-for="b in bugs" :key="b.id" :bug="b">
-      <div class="col-md-3 text-left text-light">
+    <div class="row py-3 bg-primary shadow mb-2 bug text-light" v-for="b in bugs" :key="b.id" :bug="b">
+      <div class="col-md-3 text-left text-light ">
         <router-link :to="{ name: 'BugDetails', params: {id: b.id}}" @click="getBugById" class="text-light">
           {{ b.title }}
         </router-link>
@@ -42,5 +42,10 @@ export default {
 <style lang="scss" scoped>
 .list{
   min-height: 58vh;
+}
+.bug:hover{
+  color: #003566;
+  transform: scale(1.02);
+  cursor: pointer;
 }
 </style>

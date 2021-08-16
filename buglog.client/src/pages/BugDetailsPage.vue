@@ -27,10 +27,10 @@ import { notesService } from '../services/NotesService'
 export default {
   name: 'BugDetails',
   props: {
-    // bug: {
-    //   type: Object,
-    //   required: true
-    // }
+    bug: {
+      type: Object,
+      required: true
+    }
   },
   setup() {
     const route = useRoute()

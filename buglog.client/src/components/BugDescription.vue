@@ -24,17 +24,22 @@
               Last Updated:
             </div>
             <div>
-              <!-- {{ b.timestamp }} -->
+              {{ new Date (activeBug.updatedAt).toLocaleDateString() }}
             </div>
           </div>
           <div class="col-md-4 pt-3">
-            Status
+            Bug fixed?
+            {{ activeBug.closed }}
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 pb-4">
-            <!-- {{ b.description }} -->
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, dicta exercitationem. Asperiores adipisci iure, laborum odit omnis ut accusamus animi reiciendis. Explicabo fugit a perferendis atque, sit harum dolorem nostrum!
+            <div>
+              Report Details:
+            </div>
+            <div>
+              {{ activeBug.description }}
+            </div>
           </div>
         </div>
         <NotesComponent />
@@ -60,7 +65,8 @@ export default {
     return {
       // state,
       account: computed(() => AppState.account),
-      bugs: computed(() => AppState.bugs)
+      bugs: computed(() => AppState.bugs),
+      activeBug: computed(() => AppState.activeBug)
     }
   },
   components: { NotesComponent }
