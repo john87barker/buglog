@@ -1,11 +1,14 @@
 <template>
   <div class="component col-md-10 offset-1 bg-primary top ">
     <div class="row pt-1 text-light">
-      <div class="col-md-3 text-right pr-5 my-2">
+      <div class="col-md-12 text-right  my-2 d-flex justify-content-between">
         <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary">
           Add a Note
         </button>
         <NoteModal />
+        <button type="button" class="mx-2 my-1 btn btn-outline-warning">
+          Close this bug
+        </button>
       </div>
     </div>
     <div class="row">

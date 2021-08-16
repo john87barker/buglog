@@ -5,8 +5,9 @@
         <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary">
           Notes
         </button>
-        <NoteModal />
       </div>
+
+      <NoteModal />
     </div>
     <div class="row">
       <BugDescription />

@@ -37,5 +37,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.red{
+  color: red;
+  text-shadow: 1px 1px  black;
+}
+.green{
+  color: green;
+  text-shadow: 1px 1px  black;
+}
 </style>
