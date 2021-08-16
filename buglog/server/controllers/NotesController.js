@@ -9,19 +9,8 @@ export class NotesController extends BaseController {
     // .get('', this.getAll)
 
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .get('/:id', this.getNotesByBugId)
       .post('', this.create)
       .put('/:id', this.edit)
-  }
-
-  async getNotesByBugId(req, res, next) {
-    try {
-      req.body.creatorId = req.userInfo.id
-      const notes = await notesService.getNotesByBugId(req.params.id)
-      res.send(notes)
-    } catch (error) {
-      next(error)
-    }
   }
 
   async create(req, res, next) {

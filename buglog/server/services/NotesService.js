@@ -3,7 +3,7 @@ import { BadRequest } from '../utils/Errors'
 
 class NotesService {
   async getNotesByBugId(id) {
-    const note = await dbContext.Notes.findById(id).populate('creator', 'name picture')
+    const note = await dbContext.Notes.find({ bugId: id }).populate('creator', 'name picture')
     if (!note) {
       throw new BadRequest('invalid id')
     }

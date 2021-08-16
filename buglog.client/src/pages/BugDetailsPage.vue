@@ -30,6 +30,10 @@ export default {
     bug: {
       type: Object,
       required: true
+    },
+    notes: {
+      type: Array,
+      required: true
     }
   },
   setup() {

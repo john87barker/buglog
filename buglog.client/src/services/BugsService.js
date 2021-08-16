@@ -11,13 +11,14 @@ class BugsService {
   async getBugById(id) {
     const res = await api.get(`api/bugs/${id}`)
     AppState.activeBug = res.data
-    console.log(res.data)
+    // console.log(res.data)
   }
 
   async getNotesByBugId(id) {
     const res = await api.get(`api/bugs/${id}/notes`)
     logger.log(res.data)
     AppState.notes = res.data
+    console.log(res.data)
   }
 
   async createBug(newBug) {

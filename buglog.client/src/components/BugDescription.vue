@@ -55,7 +55,11 @@ import NotesComponent from '../components/NotesComponenet.vue'
 export default {
   name: 'BugDescription',
   props: {
-    bug: {
+    // bug: {
+    //   type: Object,
+    //   required: true
+    // },
+    note: {
       type: Object,
       required: true
     }
@@ -66,7 +70,8 @@ export default {
       // state,
       account: computed(() => AppState.account),
       bugs: computed(() => AppState.bugs),
-      activeBug: computed(() => AppState.activeBug)
+      activeBug: computed(() => AppState.activeBug),
+      notes: computed(() => AppState.notes)
     }
   },
   components: { NotesComponent }
@@ -75,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 .pic{
-  width: 100%;
+  width: 75px;
 }
 .top{
   height: 10rem;

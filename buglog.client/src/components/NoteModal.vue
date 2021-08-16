@@ -10,20 +10,13 @@
             X
           </button>
         </div>
-        <!-- add v-model in here -->
         <div class="modal-body modal-body-scrollable">
-          <input
-            class="form-control mb-2"
-            type="text"
-
-            id="noteTitle"
-            placeholder="Bug name..."
-          >
           <textarea
             class="form-control"
             id="noteDescription"
+            v-model="state.newNote.body"
             rows="3"
-            placeholder="Describe the bug..."
+            placeholder="Add a note..."
           >
           </textarea>
         </div>
@@ -32,7 +25,7 @@
         <div class="modal-footer">
           <!-- TODO add @click here -->
           <button type="submit"
-
+                  @click="createNote"
                   class="btn btn-secondary"
                   data-toggle="modal"
                   data-target="#createNote"
@@ -46,10 +39,43 @@
 </template>
 
 <script>
+import { computed, reactive } from '@vue/runtime-core'
+import { AppState } from '../AppState'
+import Pop from '../utils/Notifier'
+import { useRoute, useRouter } from 'vue-router'
+import { notesService } from '../services/NotesService'
 export default {
   name: 'Component',
-  setup() {
-    return {}
+  props: {
+    bug: {
+      type: Object,
+      required: true
+    },
+    note: {
+      type: Object,
+      required: true
+    }
+  },
+  setup(props) {
+    const route = useRoute()
+    const state = reactive({
+      newNote: {}
+    })
+    return {
+      state,
+      account: computed(() => AppState.account),
+      notes: computed(() => AppState.notes),
+
+      async createNote() {
+        try {
+          state.newNote.bugId = route.params.id
+          await notesService.createNote(state.newNote)
+          state.newNote = {}
+        } catch (error) {
+          Pop.toast(error, 'error')
+        }
+      }
+    }
   },
   components: {}
 }
