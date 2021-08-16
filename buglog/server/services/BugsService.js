@@ -1,17 +1,28 @@
 import { dbContext } from '../db/DbContext'
 import { BadRequest, Forbidden } from '../utils/Errors'
 class BugsService {
-  async destroy(id, userId, body) {
-    const bug = await dbContext.Bugs.findOneAndUpdate({ _id: id, body, creatorId: userId }, { Closed: true })
-    if (!bug) {
-      throw new BadRequest('invalid id')
+  async destroy(id, body, userId) {
+    // find stuff
+    const bug = await dbContext.Bugs.findById(id)
+    // if it is closed already, if it is closed 'you can't do that' what property to change update the one that we found
+    if (bug.creatorId.toString() !== userId) {
+      throw new BadRequest('Not allowed to change!')
+    } else if (bug.closed === true) {
+      throw new BadRequest('Already closed, can\'t reopen')
+    } else {
+      bug.closed = true
+      const after = await dbContext.Bugs.findOneAndUpdate({ _id: bug.id, creatorId: userId }, bug, { new: true, runValidators: true })
+      return after
     }
-    return bug
   }
 
-  async edit(body) {
-    const bug = await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
-    return bug
+  async edit(id, body) {
+    const bug = await dbContext.Bugs.findById(id)
+    if (bug.closed === true) {
+      return await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
+    } else {
+      throw new BadRequest('do it stupid')
+    }
   }
 
   async getBugById(id) {

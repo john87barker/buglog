@@ -72,7 +72,7 @@ export class BugsController extends BaseController {
   async destroy(req, res, next) {
     try {
       req.body.creatorId = req.userInfo.id
-      res.send(await bugsService.destroy(req.params.id, req.userInfo.id))
+      res.send(await bugsService.destroy(req.params.id, req.body, req.userInfo.id))
     } catch (error) {
       next(error)
     }
