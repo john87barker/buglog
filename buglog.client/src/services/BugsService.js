@@ -5,6 +5,7 @@ import { api } from './AxiosService'
 class BugsService {
   async getAllBugs() {
     const res = await api.get('api/bugs')
+    console.log(res.data)
     AppState.bugs = res.data
   }
 

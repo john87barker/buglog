@@ -39,6 +39,8 @@ export default {
 
     onMounted(async() => {
       try {
+        // debugger
+        // await bugsService.getAllBugs()
         await bugsService.getAllBugs()
         console.log('mounted get all')
       } catch (error) {
