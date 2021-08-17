@@ -27,6 +27,7 @@
           <button type="submit"
                   @click="createNote"
                   class="btn btn-secondary"
+                  title="submit"
                   data-toggle="modal"
                   data-target="#createNote"
           >

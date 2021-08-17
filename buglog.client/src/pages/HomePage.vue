@@ -6,7 +6,7 @@
           <h2>Bugs</h2>
         </div>
         <div class="col-md-6 col-sm-12 pb-4 ">
-          <button type="button" data-target="#createBugReport" data-toggle="modal" class="mx-2 my-1 btn btn-gradient report">
+          <button type="button" data-target="#createBugReport" data-toggle="modal" class="mx-2 my-1 btn btn-gradient report" title="report bug">
             Report Bug
           </button>
           <CreateBugModal :bug="b" />

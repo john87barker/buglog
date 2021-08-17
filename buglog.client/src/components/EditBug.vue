@@ -35,6 +35,7 @@
           <button type="submit"
                   @click="editBug"
                   class="btn btn-secondary"
+                  title="submit"
                   data-toggle="modal"
                   data-target="#editBugReport"
           >

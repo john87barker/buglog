@@ -33,6 +33,7 @@
           <button type="submit"
                   @click="createBug"
                   class="btn btn-secondary"
+                  title="submit form"
                   data-toggle="modal"
                   data-target="#createBugReport"
           >

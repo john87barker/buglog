@@ -3,25 +3,25 @@
     <div class="row pt-1 text-light">
       <div class="col-md-12 text-right  my-2 d-flex justify-content-between">
         <div v-if="activeBug.closed == false">
-          <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary">
+          <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary" title="create note">
             Add a Note
           </button>
           <NoteModal />
         </div>
         <div v-else class="disabled">
-          <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary">
+          <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary" title="create note">
             Add a Note
           </button>
           <NoteModal />
         </div>
         <div>
           <div v-if="activeBug.closed == false">
-            <button type="button" class="mx-2 my-1 btn btn-outline-warning" @click="destroyBug(activeBug.id)">
+            <button type="button" class="mx-2 my-1 btn btn-outline-warning" @click="destroyBug(activeBug.id)" title="close bug">
               Close this bug
             </button>
           </div>
           <div v-else class="disabled">
-            <button type="button" class="mx-2 my-1 btn btn-outline-warning" @click="destroyBug(activeBug.id)">
+            <button type="button" class="mx-2 my-1 btn btn-outline-warning" @click="destroyBug(activeBug.id)" title="close bug">
               Close this bug
             </button>
           </div>
@@ -30,12 +30,12 @@
       <!-- <div class="row"> -->
       <div class="BugDescription col-md-12 bg-dark-grey px-5 list py-3 mb-5 shadow">
         <div class="row my-3">
-          <div class="col-md-4 d-flex">
+          <div class="col-md-4 d-flex" v-if="activeBug.creator">
             <div>
-              <img :src="account.picture" alt="" class="rounded pic">
+              <img :src="activeBug.creator.picture" alt="" class="rounded pic">
             </div>
             <div class="pl-2 pt-3">
-              {{ account.name }}
+              {{ activeBug.creator.name }}
             </div>
           </div>
           <div class="col-md-4 pt-3 text-grey">

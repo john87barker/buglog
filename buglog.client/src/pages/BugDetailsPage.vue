@@ -13,10 +13,14 @@
               {{ activeBug.title }}
             </h3>
           </div>
-          <button class="btn btn-outline-dark-grey" data-target="#editBugReport" data-toggle="modal">
-            <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug">
-          </button>
-          <EditBug :bug="activeBug" />
+          <div v-if="activeBug.creator == true">
+            <div v-if="activeBug.closed == false">
+              <button class="btn btn-outline-dark-grey" data-target="#editBugReport" data-toggle="modal" title="edit bug">
+                <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug">
+              </button>
+              <EditBug :bug="activeBug" />
+            </div>
+          </div>
         </div>
       </div>
       <BugDescription />

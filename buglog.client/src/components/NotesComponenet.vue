@@ -12,12 +12,12 @@
             </div>
           </div>
           <div v-if="activeBug.closed" class="disabled">
-            <button class=" btn btn-outline-warning" @click="destroyNote(note.id)">
+            <button class=" btn btn-outline-warning" @click="destroyNote(note.id)" title="close note">
               Delete Note
             </button>
           </div>
           <div v-else>
-            <button class=" btn btn-outline-warning" @click="destroyNote(note.id)">
+            <button class=" btn btn-outline-warning" @click="destroyNote(note.id)" title="close note">
               Delete Note
             </button>
           </div>
