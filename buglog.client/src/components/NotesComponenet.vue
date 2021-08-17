@@ -54,7 +54,6 @@ export default {
       activeBug: computed(() => AppState.activeBug),
       async destroyNote(id) {
         try {
-          debugger
           await Swal.fire({
 
             title: 'Are you sure?',

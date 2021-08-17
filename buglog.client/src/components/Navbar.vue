@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient row">
-    <div class="col-md-6 ">
+    <div class="col-md-6 center">
       <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-        <div class="d-flex flex-column align-items-center ">
+        <div class="d-flex flex-column align-items-center  ">
           <img
             alt="logo"
             src="../assets/img/bug-outline.png"
@@ -11,7 +11,7 @@
         </div>
       </router-link>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler lines"
         type="button"
         data-toggle="collapse"
         data-target="#navbarText"

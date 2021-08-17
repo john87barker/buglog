@@ -1,6 +1,6 @@
 <template>
   <div class="component col-md-12 col-sm-12 bg-primary top center">
-    <div class="row pt-1 text-light left">
+    <div class="row pt-1 text-light right">
       <h4 class="col-md-3 text-left pl-5">
         Title
       </h4>
@@ -34,5 +34,9 @@ export default {
 <style lang="scss" scoped>
 .top{
   height: 10rem;
+}
+.right{
+  text-align: left !important;
+  justify-self: end;
 }
 </style>

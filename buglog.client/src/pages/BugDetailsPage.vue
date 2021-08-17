@@ -1,7 +1,7 @@
 <template>
   <div class="component flex-grow-1 d-flex flex-column align-items-center justify-content-between row">
     <div class="col-md-12">
-      <div class="row pt-3 ">
+      <div class="row pt-3 px-0 mr-1 ">
         <div class="col-md-6 d-flex bg-dark-grey justify-content-between ml-3 ">
           <div class="pt-2 ">
             <div>
@@ -38,11 +38,11 @@ export default {
     bug: {
       type: Object,
       required: true
-    },
-    notes: {
-      type: Array,
-      required: true
     }
+    // notes: {
+    //   type: Array,
+    //   required: true
+    // }
   },
   setup() {
     const route = useRoute()
@@ -62,7 +62,8 @@ export default {
     return {
       state,
       bugs: computed(() => AppState.bugs),
-      activeBug: computed(() => AppState.activeBug)
+      activeBug: computed(() => AppState.activeBug),
+      notes: computed(() => AppState.notes)
       // Create edit bug details.
     }
   },

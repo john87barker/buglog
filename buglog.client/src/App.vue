@@ -26,13 +26,20 @@ export default {
 <style lang="scss">
 @import "./assets/scss/main.scss";
 @media only screen and (max-width: 500px){
-.left{
+.right{
   text-align: right;
-  justify-content: end;
+  justify-content: right;
 }
 .center{
-  text-align: start;
-  justify-self: unset;
+  text-align: center;
+  justify-self: center;
+  justify-content: center;
+
+}
+@media only screen and (max-width: 500px) {
+  .lines {
+    display: none;
+  }
 }
 }
 </style>
