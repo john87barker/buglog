@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon" />
       </button>
     </div>
-    <div class="collapse navbar-collapse col-md-6  d-flex justify-content-end col-md-" id="navbarText">
+    <div class="collapse navbar-collapse col-md-6  d-flex justify-content-end col-md-6" id="navbarText">
       <span class="navbar-text">
         <button
           class="btn btn-outline-primary text-uppercase"

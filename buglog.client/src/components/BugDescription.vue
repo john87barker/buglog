@@ -110,31 +110,28 @@ export default {
       activeBug: computed(() => AppState.activeBug),
       notes: computed(() => AppState.notes),
       async destroyBug(id) {
-        try {
-          await Swal.fire({
+        await Swal.fire({
 
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, it is finished!'
-          }).then(async(result) => {
-            if (result.isConfirmed) {
-              router.push({ name: 'Home' })
-              await bugsService.destroyBug(id)
-              Swal.fire(
-                'Congratulations',
-                'Your case is closed.',
-                'success'
-              )
-            }
-          })
-        } catch (error) {
-          Pop.toast(error, 'error')
-        }
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, it is finished!'
+        }).then(async(result) => {
+          if (result.isConfirmed) {
+            router.push({ name: 'Home' })
+            await bugsService.destroyBug(id)
+            Swal.fire(
+              'Congratulations',
+              'Your case is closed.',
+              'success'
+            )
+          }
+        })
       }
+
     }
   },
   components: { NotesComponent }

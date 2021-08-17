@@ -23,6 +23,11 @@ class BugsService {
     } else {
       return await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
     }
+    // const bug = await dbContext.Bugs.findById(id)
+    // return await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
+    // version 1
+    // const bug = await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
+    //     return bug
   }
 
   async getBugById(id) {
