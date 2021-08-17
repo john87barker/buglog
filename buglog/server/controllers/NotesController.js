@@ -11,6 +11,7 @@ export class NotesController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.create)
       .put('/:id', this.edit)
+      .delete('/:id', this.destroy)
   }
 
   async create(req, res, next) {

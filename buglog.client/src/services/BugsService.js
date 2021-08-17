@@ -42,9 +42,10 @@ class BugsService {
     return res.data
   }
 
-  async destoryBug() {
-    await api.delete('api/bugs/:id')
-    // don't delete just change it up...need help here
+  async destroyBug(id) {
+    await api.delete('api/bugs/' + id)
+    const allBugs = AppState.bugs
+    AppState.bugs = allBugs.filter(b => b.id !== id)
   }
 }
 

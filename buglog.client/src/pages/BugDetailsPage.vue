@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { computed, onMounted } from '@vue/runtime-core'
+import { computed, onMounted, reactive } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { useRoute, useRouter } from 'vue-router'
 import Pop from '../utils/Notifier'
@@ -39,6 +39,9 @@ export default {
   },
   setup() {
     const route = useRoute()
+    const state = reactive({
+      activeBug: {}
+    })
     onMounted(async() => {
       try {
         // debugger
@@ -50,6 +53,7 @@ export default {
       }
     })
     return {
+      state,
       bugs: computed(() => AppState.bugs),
       activeBug: computed(() => AppState.activeBug)
       // Create edit bug details.
