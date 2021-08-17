@@ -23,7 +23,7 @@ class NotesService {
 
   async destroy(id, userId) {
     await dbContext.Notes.findById(id)
-    const deleted = await dbContext.Notes.findByIdAndDelete({ _id: id, creatorId: userId }, { new: true, runValidators: true })
+    const deleted = await dbContext.Notes.findByIdAndDelete({ _id: id, creatorId: userId }, { runValidators: true })
     return deleted
   }
 }

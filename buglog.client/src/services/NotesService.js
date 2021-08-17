@@ -21,6 +21,13 @@ class NotesService {
       logger.log(error)
     }
   }
+
+  async destroyNote(id) {
+    await api.delete('api/notes/' + id)
+    const allNotes = AppState.notes
+    console.log(id)
+    AppState.notes = allNotes.filter(n => n.id !== id)
+  }
 }
 
 export const notesService = new NotesService()

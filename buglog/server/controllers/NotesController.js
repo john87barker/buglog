@@ -38,6 +38,7 @@ export class NotesController extends BaseController {
 
   async destroy(req, res, next) {
     try {
+      debugger
       req.body.creatorId = req.userInfo.id
       res.send(await notesService.destroy(req.params.id, req.userInfo.id))
     } catch (error) {
