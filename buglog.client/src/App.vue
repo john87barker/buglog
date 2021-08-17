@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="center">
     <Navbar />
   </header>
   <main class="container-fluid bg-grey">
@@ -25,5 +25,14 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
+@media only screen and (max-width: 500px){
+.left{
+  text-align: right;
+  justify-content: end;
+}
+.center{
+  text-align: start;
+  justify-self: unset;
+}
+}
 </style>

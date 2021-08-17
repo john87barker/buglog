@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient row">
-    <div class="col-md-6">
+    <div class="col-md-6 ">
       <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
         <div class="d-flex flex-column align-items-center ">
           <img
             alt="logo"
             src="../assets/img/bug-outline.png"
             height="45"
-          />
+          /> BugLog
         </div>
       </router-link>
       <button
@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon" />
       </button>
     </div>
-    <div class="collapse navbar-collapse col-md-6 d-flex justify-content-end" id="navbarText">
+    <div class="collapse navbar-collapse col-md-6  d-flex justify-content-end col-md-" id="navbarText">
       <span class="navbar-text">
         <button
           class="btn btn-outline-primary text-uppercase"

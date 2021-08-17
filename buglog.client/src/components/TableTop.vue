@@ -1,17 +1,16 @@
 <template>
-  <div class="component col-md-10 offset-1 bg-primary top ">
-    <div class="row pt-1 text-light">
-      <h4 class="col-md-3 text-right pr-5">
+  <div class="component col-md-12 col-sm-12 bg-primary top center">
+    <div class="row pt-1 text-light left">
+      <h4 class="col-md-3 text-left pl-5">
         Title
       </h4>
-      <h4 class="col-md-3 text-right pr-4">
+      <h4 class="col-md-3 ">
         Reported By
       </h4>
-      <h4 class="col-md-3 ">
+      <h4 class="col-md-3 pl-5">
         Last Update
       </h4>
-      <h4 class="col-md-3 text-left">
-        <!-- TODO make it a v-if something to the effect of if bug.status === true / then make strikethrough -ish -->
+      <h4 class="col-md-3 text-center">
         Status
       </h4>
     </div>

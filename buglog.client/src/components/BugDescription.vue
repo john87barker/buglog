@@ -1,5 +1,5 @@
 <template>
-  <div class="component col-md-10 offset-1 bg-primary top ">
+  <div class="component col-md-12 bg-primary top ">
     <div class="row pt-1 text-light">
       <div class="col-md-12 text-right  my-2 d-flex justify-content-between">
         <div v-if="activeBug.closed == false">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <!-- <div class="row"> -->
-      <div class="BugDescription col-md-10 offset-1 bg-dark-grey px-5 list py-3 mb-5 shadow">
+      <div class="BugDescription col-md-12 bg-dark-grey px-5 list py-3 mb-5 shadow">
         <div class="row my-3">
           <div class="col-md-4 d-flex">
             <div>

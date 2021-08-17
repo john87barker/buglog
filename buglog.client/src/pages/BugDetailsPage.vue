@@ -2,10 +2,17 @@
   <div class="component flex-grow-1 d-flex flex-column align-items-center justify-content-between row">
     <div class="col-md-12">
       <div class="row pt-3 ">
-        <div class="col-md-4 offset-1 d-flex bg-dark-grey justify-content-between ">
-          <h3 class="pt-2">
-            {{ activeBug.title }}
-          </h3>
+        <div class="col-md-6 d-flex bg-dark-grey justify-content-between ml-3 ">
+          <div class="pt-2 ">
+            <div>
+              <em>
+                bug name:
+              </em>
+            </div>
+            <h3>
+              {{ activeBug.title }}
+            </h3>
+          </div>
           <button class="btn btn-outline-dark-grey" data-target="#editBugReport" data-toggle="modal">
             <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug">
           </button>

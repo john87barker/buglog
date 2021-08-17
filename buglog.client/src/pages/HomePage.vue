@@ -1,11 +1,11 @@
 <template>
   <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-between row ">
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12 ">
       <div class="row pt-3">
-        <div class="col-md-6  pb-4">
+        <div class="col-md-6 col-sm-12  pb-4">
           <h2>Bugs</h2>
         </div>
-        <div class="col-md-6 pb-4 ">
+        <div class="col-md-6 col-sm-12 pb-4 ">
           <button type="button" data-target="#createBugReport" data-toggle="modal" class="mx-2 my-1 btn btn-gradient report">
             Report Bug
           </button>

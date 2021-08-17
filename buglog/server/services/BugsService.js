@@ -19,9 +19,9 @@ class BugsService {
   async edit(id, body) {
     const bug = await dbContext.Bugs.findById(id)
     if (bug.closed === true) {
-      return await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
-    } else {
       throw new BadRequest('do it stupid')
+    } else {
+      return await dbContext.Bugs.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
     }
   }
 

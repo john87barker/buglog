@@ -1,6 +1,6 @@
 <template>
-  <div class="component col-md-10 offset-1 bg-dark-grey px-5 list pt-3 mb-5">
-    <div class="row py-3 bg-primary shadow mb-3 bug text-light" v-for="b in bugs" :key="b.id">
+  <div class="component col-md-12 bg-dark-grey px-5 list pt-3 mb-4">
+    <div class="row py-3 bg-primary shadow mb-3 bug text-light rounded-pill" v-for="b in bugs" :key="b.id">
       <Bug :bug="b" />
     </div>
   </div>
