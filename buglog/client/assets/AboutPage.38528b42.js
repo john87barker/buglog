@@ -1,0 +1,1 @@
+import{o as a,a as e,b as o}from"./vendor.d399f1f7.js";const t={name:"AboutPage"},s={class:"about"},n=o("h1",null,"This is the about page",-1);t.render=function(o,t,r,u,d,f){return a(),e("div",s,[n])};export default t;
