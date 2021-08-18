@@ -13,14 +13,14 @@
               {{ activeBug.title }}
             </h3>
           </div>
-          <div v-if="activeBug.creator == true">
-            <div v-if="activeBug.closed == false">
-              <button class="btn btn-outline-dark-grey" data-target="#editBugReport" data-toggle="modal" title="edit bug">
-                <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug">
-              </button>
-              <EditBug :bug="activeBug" />
-            </div>
+          <!-- <div v-if="activeBug.creator == true"> -->
+          <div v-if="activeBug.closed == false && activeBug.creatorId == account.id">
+            <button class="btn btn-outline-dark-grey" data-target="#editBugReport" data-toggle="modal" title="edit bug">
+              <img src="../assets/img/pencil-box.png" alt="pencil image" srcset="" title="edit bug">
+            </button>
+            <EditBug :bug="activeBug" />
           </div>
+          <!-- </div> -->
         </div>
       </div>
       <BugDescription />
@@ -67,6 +67,8 @@ export default {
       state,
       bugs: computed(() => AppState.bugs),
       activeBug: computed(() => AppState.activeBug),
+      user: computed(() => AppState.user),
+      account: computed(() => AppState.account),
       notes: computed(() => AppState.notes)
       // Create edit bug details.
     }

@@ -38,11 +38,11 @@ export default {
 
 <style lang="scss" scoped>
 .red{
-  color: red;
-  text-shadow: 1px 1px  black;
+  color: red($color: #000000);
+  text-shadow: 1px 1px  red;
 }
 .green{
-  color: green;
-  text-shadow: 1px 1px  black;
+  color: green($color: #000000);
+  text-shadow: 1px 1px  green;
 }
 </style>

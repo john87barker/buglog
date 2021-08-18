@@ -1,40 +1,38 @@
 <template>
   <div class="modal fade" id="createNote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
-      <div class="modal-content bg-dark-grey">
-        <div class="modal-header bg-primary ">
-          <h5 class="modal-title bg-primary" id="exampleModalLabel">
-            Create a Note
-          </h5>
-          <button type="button" class="btn-close btn btn-outline-secondary" data-dismiss="modal" aria-label="Close" title="close">
-            X
-          </button>
-        </div>
-        <div class="modal-body modal-body-scrollable">
-          <textarea
-            class="form-control"
-            id="noteDescription"
-            v-model="state.newNote.body"
-            rows="3"
-            placeholder="Add a note..."
-          >
+      <form @submit.prevent="createNote">
+        <div class="modal-content bg-dark-grey">
+          <div class="modal-header bg-primary ">
+            <h5 class="modal-title bg-primary" id="exampleModalLabel">
+              Create a Note
+            </h5>
+            <button type="button" class="btn-close btn btn-outline-secondary" data-dismiss="modal" aria-label="Close" title="close">
+              X
+            </button>
+          </div>
+          <div class="modal-body modal-body-scrollable">
+            <textarea
+              class="form-control"
+              id="noteDescription"
+              v-model="state.newNote.body"
+              required
+              rows="3"
+              placeholder="Add a note..."
+            >
           </textarea>
-        </div>
-        <!-- vfor in next line -->
+          </div>
 
-        <div class="modal-footer">
-          <!-- TODO add @click here -->
-          <button type="submit"
-                  @click="createNote"
-                  class="btn btn-secondary"
-                  title="submit"
-                  data-toggle="modal"
-                  data-target="#createNote"
-          >
-            Save Note
-          </button>
+          <div class="modal-footer">
+            <button type="submit"
+                    class="btn btn-secondary"
+                    title="submit"
+            >
+              Save Note
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>
@@ -45,6 +43,8 @@ import { AppState } from '../AppState'
 import Pop from '../utils/Notifier'
 import { useRoute, useRouter } from 'vue-router'
 import { notesService } from '../services/NotesService'
+import $ from 'jquery'
+
 export default {
   name: 'Component',
   props: {
@@ -72,6 +72,7 @@ export default {
           state.newNote.bugId = route.params.id
           await notesService.createNote(state.newNote)
           state.newNote = {}
+          $('#createNote').modal('toggle')
         } catch (error) {
           Pop.toast(error, 'error')
         }

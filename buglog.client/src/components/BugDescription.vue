@@ -8,23 +8,23 @@
           </button>
           <NoteModal />
         </div>
-        <div v-else class="disabled">
+        <!-- <div v-else class="disabled">
           <button type="button" data-target="#createNote" data-toggle="modal" class="mx-2 my-1 btn btn-outline-secondary" title="create note">
             Add a Note
           </button>
-          <NoteModal />
-        </div>
+      </div> -->
+        <NoteModal />
         <div>
           <div v-if="activeBug.closed == false">
             <button type="button" class="mx-2 my-1 btn btn-outline-warning" @click="destroyBug(activeBug.id)" title="close bug">
               Close this bug
             </button>
           </div>
-          <div v-else class="disabled">
+          <!-- <div v-else class="disabled">
             <button type="button" class="mx-2 my-1 btn btn-outline-warning" @click="destroyBug(activeBug.id)" title="close bug">
               Close this bug
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- <div class="row"> -->
@@ -146,12 +146,12 @@ export default {
   height: 10rem;
 }
 .red{
-  color: red;
-  text-shadow: 1px 1px  black;
+  color: red($color: #000000);
+  text-shadow: 1px 1px red;
 }
 .green{
-  color: green;
-  text-shadow: 1px 1px 1px black;
+  color:green($color: #000000);
+  text-shadow: 1px 1px 1px green;
 }
 style---
 .closed{
