@@ -12,6 +12,7 @@ class NotesService {
   }
 
   async edit(body) {
+    // Was going to add the user only edit stuff but we don't edit these on this.
     const note = await dbContext.Notes.findByIdAndUpdate(body.id, body, { new: true, runValidators: true }).populate('creator', 'name picture')
     return note
   }
@@ -22,7 +23,10 @@ class NotesService {
   }
 
   async destroy(id, userId) {
-    await dbContext.Notes.findById(id)
+    const note = await dbContext.Notes.findById(id)
+    if (note.creatorId !== userId) {
+      throw new BadRequest('not your note')
+    }
     const deleted = await dbContext.Notes.findByIdAndDelete(id)
     return deleted
   }
