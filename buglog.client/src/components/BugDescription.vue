@@ -76,7 +76,6 @@
         <NotesComponent />
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </template>
 
