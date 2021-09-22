@@ -1,7 +1,7 @@
 <template>
   <div class="component col-md-12 col-sm-12 bg-primary top center">
-    <div class="row pt-1 text-light right">
-      <h4 class="col-md-3 text-left pl-5">
+    <div class="row pt-1 text-light justify-content-between">
+      <h4 class="col-md-3 pl-5">
         Title
       </h4>
       <h4 class="col-md-3 ">
@@ -10,7 +10,7 @@
       <h4 class="col-md-3 pl-5">
         Last Update
       </h4>
-      <h4 class="col-md-3 text-center">
+      <h4 class="col-md-3 ">
         Status
       </h4>
     </div>

@@ -11,12 +11,7 @@
               {{ note.creator.name }}
             </div>
           </div>
-          <div v-if="activeBug.closed && note.creatorId == account.id">
-            <button class=" btn btn-outline-warning" @click="destroyNote(note.id)" title="close note">
-              Delete Note
-            </button>
-          </div>
-          <div v-else>
+          <div v-if="activeBug.closed == false && note.creatorId == account.id">
             <button class=" btn btn-outline-warning" @click="destroyNote(note.id)" title="close note">
               Delete Note
             </button>
