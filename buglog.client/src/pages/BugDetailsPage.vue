@@ -2,7 +2,7 @@
   <div class="component flex-grow-1 d-flex flex-column align-items-center justify-content-between row">
     <div class="col-md-12">
       <div class="row pt-3 px-0 mr-1 ">
-        <div class="col-md-6 d-flex bg-dark-grey justify-content-between ml-3 ">
+        <div class="col-md-6 d-flex bg-dark-grey justify-content-between ml-3 rounded-top">
           <div class="pt-2 ">
             <div>
               <em>

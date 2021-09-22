@@ -143,6 +143,7 @@ export default {
 }
 .top{
   height: 10rem;
+  border-top-right-radius: 5px;
 }
 .red{
   color: red($color: #000000);
